@@ -1,0 +1,61 @@
+﻿@model IEnumerable<DoAnLTWeb.Models.Product>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutSite.cshtml";
+}
+<h2 style="text-align:center; color:deepskyblue">Sản phẩm</h2>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel panel-heading">
+                    @item.DisplayName
+                </div>
+                <div class="panel-body">
+                    <p><strong>Giá: </strong>@item.Price_Sell</p>
+
+                    <p><strong>Số lượng tồn: </strong>@item.Soluong</p>
+                    <p><img src="@item.Hinh" alt="hinh thumnail" height="300px" width="300px"></p>
+                </div>
+                <div class="panel-footer clearfix">
+                    <div class="pull-right">
+                        <div class="datMua">
+                            <a class="btn btn-success" href="@Url.Action("ThemGioHang", "GioHang",
+                                    new { @id = item.ID_PR, @strURL = Request.Url.ToString() })">Đặt mua</a>
+                        </div>
+                        <div class="Chitiet">
+                            <a class="btn btn-danger" @Html.ActionLink("Chi tiết sản phẩm", "Detail", new{  id =item.ID_PR
+                        })>_<</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<html>
+<link href="~/Content/MyCSS.css" rel="stylesheet" />
+<button class="nut-mo-chatbox" onclick="moForm()">Chat</button>
+<div class="Chatbox" id="myForm">
+    <form action="" class="form-container">
+        <h1>Chatbox</h1>
+        <label for="msg"><b>Lời Nhắn</b></label>
+        <textarea placeholder="Bạn hãy nhập lời nhắn.." name="msg" required></textarea>
+        <button type="submit" class="btn">Gửi</button>
+        <button type="button" class="btn nut-dong-chatbox" onclick="dongForm()">Đóng</button>
+    </form>
+    @section scripts
+    {
+        <script>
+            function moForm() {
+               document.getElementById("myForm").style.display = "block";
+           }
+            function dongForm() {
+                   document.getElementById("myForm").style.display = "none";
+               }
+        </script>
+    }
+</html>

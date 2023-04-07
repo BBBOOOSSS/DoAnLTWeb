@@ -1,0 +1,63 @@
+﻿<!-- Brand Logo -->
+<a  class="brand-link">
+    
+    <span class="nav-link" style=" font-weight: bold" >QUẢN LÝ </span>
+</a>
+<!-- Sidebar -->
+<div class="sidebar">
+    <!-- Sidebar Menu -->
+    <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <!-- Add icons to the links using the .nav-icon class
+    with font-awesome or any other icon font library -->
+            <li class="nav-item">
+                <a  class="nav-link">
+                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <p>
+                        TỔNG QUAN
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="@Url.Action("Index","QuanLySP")" class="nav-link">
+                    <i class="nav-icon fas fa-barcode"></i>
+                    <p>
+                        DANH MỤC SẢN PHẨM
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="@Url.Action("Index","QuanLyLoaiSP")" class="nav-link">
+                    <i class="nav-icon fas fa-barcode"></i>
+                    <p>
+                        DANH MỤC LOẠI SẢN PHẨM
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="@Url.Action("Index","QuanLyUser")" class="nav-link">
+                    <i class="nav-icon fas fa-barcode"></i>
+                    <p>
+                        DANH MỤC USER
+                    </p>
+                </a>
+            </li>
+           
+            <li class="nav-header">Trạng thái</li>
+            <li class="nav-item">
+                @*<a href="#" class="nav-link">
+                <i class="fas fa-user nav-icon"></i>
+                @Html.Action("CallSessionFullname", "Home")
+            </a>*@
+
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("LoginAdmin","Dashboard")">
+                    <i class="nav-icon far fa-circle text-danger"></i>Đăng xuất
+                </a>
+            </li>
+
+        </ul>
+    </nav>
+    <!-- /.sidebar-menu -->
+</div> 

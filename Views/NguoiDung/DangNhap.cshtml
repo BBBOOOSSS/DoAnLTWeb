@@ -1,0 +1,110 @@
+﻿@using DoAnLTWeb.ViewModels
+@model LoginViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Đăng nhập vào web</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/AdminLTE310/plugins/fontawesome-free/css/all.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- icheck bootstrap -->
+    <link rel="stylesheet" href="~/AdminLTE310/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/AdminLTE310/dist/css/adminlte.min.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <style type="text/css">
+        .modal-content {
+            -webkit-border-radius: 16px !important;
+            -moz-border-radius: 16px !important;
+            border-radius: 16px !important;
+            -webkit-border: 16px !important;
+            -moz-border: 16px !important;
+            border: 16px !important;
+        }
+    </style>
+</head>
+<body class="hold-transition login-page">
+
+    <div class="login-box">
+        @*<div class="login-logo">
+            <a href="https://thienphong.net" target="_blank"><b>Quản lý website camera</b></a>
+        </div>*@
+        <!-- /.login-logo -->
+        <div class="card">
+            <section id="loginForm">
+                @using (Html.BeginForm("DangNhap", "NguoiDung", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    <div class="card-body login-card-body">
+                        <p class="login-box-msg">Đăng nhập tài khoản của bạn</p>
+
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Login, new { @class = "col-md-12 control-label" })
+                            <div class="input-group mb-3">
+                                @Html.TextBoxFor(m => m.Login, new { @class = "form-control", @placeholder = "Nhập tài khoản" })
+                                @Html.ValidationMessageFor(m => m.Login, "", new { @class = "text-danger" })
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <span class="fas fa-user"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Password, new { @class = "col-md-12 control-label" })
+                            <div class="input-group mb-3">
+                                @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Nhập mật khẩu" })
+                                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <span class="fas fa-lock"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <!--Footer button  -->
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col-6">
+                                <button type="submit" class="btn btn-primary btn-block">Đăng nhập</button>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </section>
+            <!-- /.login-card-body -->
+        </div>
+
+    </div>
+
+    <!-- /.login-box -->
+    <!-- jQuery -->
+    <script src="~/AdminLTE310/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="~/AdminLTE310/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/AdminLTE310/dist/js/adminlte.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,53 @@
+﻿@model DoAnLTWeb.Models.Product
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_LayoutSite.cshtml";
+}
+
+<h2>Thông Tin Sản Phẩm</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên sản phẩm
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DisplayName)
+        </dd>
+        <dt>
+            Loại sản phẩm
+        </dt>
+        <dt>
+            <b>Không dây</b>
+        </dt>
+        
+        <dd>
+            <img src="@Model.Hinh" alt="Alternate Text" />
+        </dd>
+
+        <dt>
+           Giá 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price_Sell)
+        </dd>
+
+        <dt>
+            Số lượng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Soluong)
+        </dd>
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_PR }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

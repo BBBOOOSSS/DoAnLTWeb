@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@Page.Title</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="~/Public/css/LayoutSite.css" rel="stylesheet" />
+    @RenderSection("head", required: false)
+</head>
+<body>
+    
+    <section class="topbar bg-primary">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">THÔNG TIN LIÊN HỆ</div>
+                <div class="col-md-3"></div>
+                <div class="col-md-3" >HOTEL : 0947722273</div>
+
+            </div>
+        </div>
+    </section>
+
+    <!--section End topbar-->
+
+    <section class="header bg-light">
+        <div class="container ">
+            <div class="row">
+                <div class="col-md">
+
+                    @*<img src="~/Public/Image/lolw.jpg"  width="200px" height="70px"/>*@
+                </div>
+
+                @*<div class="col-md-2"><li></li></div>*@
+
+
+
+            </div>
+        </div>
+    </section>
+    <!--section End Header-->
+
+    <section class="mainmenu bg-dark">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+                @*<a class="navbar-brand" href="#">Navbar</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>*@
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Công Ty Minh Ý", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav" style="padding:5px">
+                        <li style="padding:5px">@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li style="padding:5px">@Html.ActionLink("Đăng Ký", "DangKy", "NguoiDung")</li>
+
+                        <li style="padding:5px">@Html.Partial("~/Views/GioHang/GioHangPartial.cshtml")</li>
+
+                    </ul>
+                    @*<form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        </form>*@
+                </div>
+            </nav>
+        </div>
+    </section>
+    <!--section End MainMenu-->
+
+    <section class="maincontent">
+        @RenderBody()
+    </section>
+    <!--section End MainContentu-->
+
+    <sectio class="footer" n>
+        </section>
+        <!--section End Footer-->
+
+        <sectio class="copyright" n>
+            </section>
+            <!--section End CopyRight-->
+
+
+
+
+
+
+
+
+
+            @Scripts.Render("~/bundles/jquery")
+
+            @RenderSection("scripts", required: false)
+            @RenderSection("upload", required: false)
+
+            <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+            <script src="~/Scripts/popper.min.js"></script>
+            <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+
+
+</html>
